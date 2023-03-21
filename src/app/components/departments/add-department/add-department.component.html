@@ -1,0 +1,16 @@
+<div class="container my-5">
+    <h1 class="mb-3">Add new department</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="addDepartment()">
+                <div class="mb-3">
+                    <label for="email" class="form-label">New Department's Name</label>
+                    <input type="email" class="form-control" id="email"  placeholder="Enter department's name."
+                    name="email" [(ngModel)]="newDepartment">
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+    
+</div>

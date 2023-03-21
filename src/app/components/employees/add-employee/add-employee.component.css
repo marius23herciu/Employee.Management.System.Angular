@@ -1,0 +1,7 @@
+.styled {
+    background: green;
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+}

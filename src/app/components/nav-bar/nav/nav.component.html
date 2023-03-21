@@ -1,0 +1,40 @@
+
+<!-- Header -->
+<header id="header" class="bg-secondary">
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark">
+      <!-- App Name -->
+      <a class="navbar-brand"href="#">Employees.Db</a>
+        <!-- Primary Navigation -->
+        <ul class="navbar-nav">
+            <!-- Navigation Links -->
+            <li>
+                <a class="nav-link active" aria-current="page" routerLink="" routerLinkActive="text-indigo-400"
+                [routerLinkActiveOptions]="{exact: true}"
+                [queryParams]="{sort:'1'}">Home</a>
+              </li>
+
+
+            <li class="nav-item" *ngIf="!(auth.isAuthenticated$ | async) ; else authLinks">
+              <a class="nav-link active" aria-current="page" routerLink="login">
+                  Login/Register</a>
+            </li>
+            <ng-template #authLinks>
+              <li>
+                <a class="nav-link active" aria-current="page" routerLink="/employees" routerLinkActive="text-indigo-400"
+                [routerLinkActiveOptions]="{exact: true}">Employees</a>
+              </li> 
+              <li>
+                <a class="nav-link active" aria-current="page" routerLink="/employees/add" routerLinkActive="text-indigo-400"
+                [routerLinkActiveOptions]="{exact: true}">Add Employee</a>
+              </li> 
+              <li>
+                <a class="nav-link active" aria-current="page" routerLink="/departments" routerLinkActive="text-indigo-400"
+                [routerLinkActiveOptions]="{exact: true}">Departments</a>
+              </li> 
+              <button type="button" class="btn btn-danger" (click)="auth.logout()">Logout</button>
+             
+            </ng-template>
+          </ul>
+          
+    </nav>
+  </header>

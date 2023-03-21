@@ -1,0 +1,13 @@
+
+<br>
+<div *ngIf="(auth.isAuthenticated$ | async); else notLoggedIn" style="color:blue;">
+  <h2>
+    You are logged in.
+  </h2>
+</div>
+<ng-template #notLoggedIn>
+  <h2>
+    Login to access EmployeeDb.
+  </h2>
+</ng-template>
+<br>
