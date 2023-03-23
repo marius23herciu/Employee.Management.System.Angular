@@ -22,7 +22,14 @@ export class DepartmentsService {
   deleteDepartment(depName: string): Observable<Department> {
     return this.http.delete<Department>(this.baseApiUrl + '/api/department/' + depName)
   }
-  addDepartment(depName: string): Observable<Department> {
-    return this.http.post<Department>(this.baseApiUrl + '/api/department', depName)
- }
+  addDepartment(department: Department): Observable<Department> {
+    return this.http.post<Department>(this.baseApiUrl + '/api/department', department)
+  }
+  getDepartment(name: string): Observable<Department> {
+    return this.http.get<Department>(this.baseApiUrl + '/api/department/'+ name)
+   }
+ changeName(oldName: string, newNameDepartment: Department): Observable<Department> {
+  return this.http.put<Department>(this.baseApiUrl + '/api/department/' + oldName, newNameDepartment)
+}
+
 }

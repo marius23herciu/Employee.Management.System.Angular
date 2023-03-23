@@ -12,6 +12,8 @@
           <tr *ngFor="let department of departments">
             <td>{{department.name}}</td>
             <td>{{department.noOfEmployees}}</td>
+            <td><button type="submit" class="btn btn-primary" 
+              [routerLink]="['/departments/change', department.name]">Change Name</button></td>
             <td *ngIf="department.noOfEmployees>0"><button type="submit" class="btn btn-primary" 
               [routerLink]="['/employees-by-departments', department.name]">View</button></td>
             <td *ngIf="department.noOfEmployees==0"><button type="submit" class="btn btn-danger" 

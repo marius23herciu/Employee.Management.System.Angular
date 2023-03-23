@@ -5,6 +5,8 @@ import { Employee } from 'src/app/models/employee.model';
 import { EmployeesService } from 'src/app/services/employees.service';
 import { Address } from 'src/app/models/address.model';
 import { DayMonthYear } from 'src/app/models/day-month-year.model';
+import { Department } from 'src/app/models/department.model';
+import { DepartmentsService } from 'src/app/services/departments.service';
 
 @Component({
   selector: 'app-edit-employee',
@@ -34,8 +36,12 @@ export class EditEmployeeComponent implements OnInit {
     salary: 0,
     department: ''
 }
+departments: Department[] = []
+inputSwitch = true
 
-constructor (private route: ActivatedRoute, private employeesService: EmployeesService, private router: Router) {}
+
+constructor (private route: ActivatedRoute, private employeesService: EmployeesService,
+   private router: Router, private departmentsService: DepartmentsService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe({
@@ -49,6 +55,11 @@ constructor (private route: ActivatedRoute, private employeesService: EmployeesS
             }
           })
         }
+      }
+    })
+    this.departmentsService.getAllDepartments().subscribe({
+      next: (response) => {
+        this.departments = response
       }
     })
   }
@@ -68,4 +79,7 @@ deleteEmployee(id:string){
   }
 });
 }
+
+toggle = () => this.inputSwitch = !this.inputSwitch
+
 }

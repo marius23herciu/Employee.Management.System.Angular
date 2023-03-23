@@ -1,0 +1,42 @@
+<div class="container my-5">
+    <h1 class="mb=3">Employee's details</h1>
+<table class="table">
+    <tbody>
+      <tr>
+        <th scope="row">First Name</th>
+        <td>{{employeeToEdit.firstName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Last Name</th>
+        <td>{{employeeToEdit.lastName}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Day of birth</th>
+        <td>{{employeeToEdit.dob.day}}/{{employeeToEdit.dob.month}}/{{employeeToEdit.dob.year}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Email</th>
+        <td>{{employeeToEdit.email}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Phone</th>
+        <td>{{employeeToEdit.phone}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Address</th>
+        <td>{{employeeToEdit.address.city}}, {{employeeToEdit.address.street}} Street, No. {{employeeToEdit.address.number}}</td>
+      </tr>
+      <tr>
+        <th scope="row">Salary</th>
+        <td>{{employeeToEdit.salary}}€</td>
+      </tr>
+      <tr>
+        <th scope="row">Department</th>
+        <td>{{employeeToEdit.department}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  
+<button type="button" class="btn btn-primary" [routerLink]="['/employees/edit', employeeToEdit.id]">Edit</button>
+<button type="button" class="btn btn-primary" routerLink="/employees">Employees list</button>

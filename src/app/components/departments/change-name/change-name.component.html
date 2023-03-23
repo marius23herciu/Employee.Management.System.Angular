@@ -1,0 +1,16 @@
+
+<div class="container my-5">
+    <h1 class="mb-3">Change department's name</h1>
+    <div class="row">
+        <div class="col-6">
+            <form #form="ngForm" (ngSubmit)="changeName()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">New Name</label>
+                    <input type="text" class="form-control" id="name" 
+                    name="name" placeholder="Enter name" [(ngModel)]="newNameDepartment.name">
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>

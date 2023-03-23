@@ -1,9 +1,13 @@
+import { DepartmentsService } from 'src/app/services/departments.service';
+import { Department } from './../../../models/department.model';
 import { DayMonthYear } from './../../../models/day-month-year.model';
 import { Address } from './../../../models/address.model';
 import { EmployeesService } from './../../../services/employees.service';
 import { Employee } from './../../../models/employee.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-add-employee',
@@ -34,11 +38,18 @@ newEmployee: Employee = {
     salary: 0,
     department: ''
 }
+departments: Department[] = []
+inputSwitch = true
 
-constructor (private employeesService: EmployeesService, private router: Router) {}
+constructor (private employeesService: EmployeesService, private router: Router, private departmentsService: DepartmentsService) {
+}
 
 ngOnInit(): void {
-  throw new Error('Method not implemented.');
+  this.departmentsService.getAllDepartments().subscribe({
+    next: (response) => {
+      this.departments = response
+    }
+  })
 }
 
 addEmployee() {
@@ -50,4 +61,6 @@ this.newEmployee.id = '00000000-0000-0000-0000-000000000000'
     }
   });
 }
+toggle = () => this.inputSwitch = !this.inputSwitch
+
 }

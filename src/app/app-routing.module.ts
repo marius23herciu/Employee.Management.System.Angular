@@ -1,3 +1,5 @@
+import { DetailsEmployeeComponent } from './components/employees/details-employee/details-employee.component';
+import { ChangeNameComponent } from './components/departments/change-name/change-name.component';
 import { AddDepartmentComponent } from './components/departments/add-department/add-department.component';
 import { EmployeesByDepartmentComponent } from './components/departments/employees-by-department/employees-by-department.component';
 import { DepartmentsListComponent } from './components/departments/departments-list/departments-list.component';
@@ -21,39 +23,37 @@ const routes: Routes = [
   {path: 'register',
    component: RegisterComponent
   },
-  //{
-   // path: '',
-    //component: EmployeesListComponent
-  //},
   {
     path: 'employees',
     component: EmployeesListComponent,
-    //canActivate: [AuthGuard]
   },
   {
     path: 'departments',
     component: DepartmentsListComponent,
-    //canActivate: [AuthGuard]
   },
   {
     path: 'departments/add',
     component: AddDepartmentComponent,
-    //canActivate: [AuthGuard]
+  },
+  {
+    path: 'departments/change/:name',
+    component: ChangeNameComponent,
   },
   {
     path: 'employees-by-departments/:name',
     component: EmployeesByDepartmentComponent,
-    //canActivate: [AuthGuard]
   },
   {
     path: 'employees/add',
     component: AddEmployeeComponent
-    //canActivate: [AuthGuard]
   },
   {
     path: 'employees/edit/:id',
     component: EditEmployeeComponent
-    //canActivate: [AuthGuard]
+  },
+  {
+    path: 'employees/view/:id',
+    component: DetailsEmployeeComponent
   }
 ];
 

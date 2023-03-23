@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { JwtModule } from "@auth0/angular-jwt";
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,10 +17,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { DepartmentsListComponent } from './components/departments/departments-list/departments-list.component';
 import { EmployeesByDepartmentComponent } from './components/departments/employees-by-department/employees-by-department.component';
 import { AddDepartmentComponent } from './components/departments/add-department/add-department.component';
-
-//export function tokenGetter() { 
-  //return localStorage.getItem("jwt"); 
-//}
+import { ChangeNameComponent } from './components/departments/change-name/change-name.component';
+import { DetailsEmployeeComponent } from './components/employees/details-employee/details-employee.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +32,9 @@ import { AddDepartmentComponent } from './components/departments/add-department/
     RegisterComponent,
     DepartmentsListComponent,
     EmployeesByDepartmentComponent,
-    AddDepartmentComponent
+    AddDepartmentComponent,
+    ChangeNameComponent,
+    DetailsEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -42,15 +42,6 @@ import { AddDepartmentComponent } from './components/departments/add-department/
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    //JwtModule.forRoot({
-     // config: {
-     //   tokenGetter:()=>{
-     //     return localStorage.getItem("jwt"); 
-    //    },
-    //    allowedDomains: ["localhost:7188"],
-   //     disallowedRoutes: []
-   //   }
-   // })
   ],
   providers: [],
   bootstrap: [AppComponent]

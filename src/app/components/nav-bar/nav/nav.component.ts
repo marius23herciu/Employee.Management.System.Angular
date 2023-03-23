@@ -10,11 +10,6 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavComponent {
 
-  constructor(
-    public auth: AuthService,
-    ) {
-    }
+  constructor(public auth: AuthService) {}
 
-
-  
 }

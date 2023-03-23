@@ -1,8 +1,6 @@
 import { EmployeesService } from './../../../services/employees.service';
 import { Employee } from './../../../models/employee.model';
 import { Component, OnInit } from '@angular/core';
-import { DayMonthYear } from 'src/app/models/day-month-year.model';
-import { Address } from 'src/app/models/address.model';
 
 @Component({
   selector: 'app-employees-list',

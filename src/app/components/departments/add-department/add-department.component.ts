@@ -10,13 +10,12 @@ import { Router } from '@angular/router';
 })
 export class AddDepartmentComponent {
   
-  newDepartment: string = ''
+  newDepartment: Department ={
+    name: '',
+    noOfEmployees : 0
+  }
 
   constructor (private departmentService: DepartmentsService, private router: Router) {}
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
   
   addDepartment() {
     this.departmentService.addDepartment(this.newDepartment).subscribe({

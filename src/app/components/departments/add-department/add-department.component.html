@@ -4,13 +4,12 @@
         <div class="col-6">
             <form #form="ngForm" (ngSubmit)="addDepartment()">
                 <div class="mb-3">
-                    <label for="email" class="form-label">New Department's Name</label>
-                    <input type="email" class="form-control" id="email"  placeholder="Enter department's name."
-                    name="email" [(ngModel)]="newDepartment">
+                    <label for="name" class="form-label">New Department's Name</label>
+                    <input type="text" class="form-control" id="name"  placeholder="Enter department's name."
+                    name="name" [(ngModel)]="newDepartment.name">
                   </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
         </div>
     </div>
-    
 </div>

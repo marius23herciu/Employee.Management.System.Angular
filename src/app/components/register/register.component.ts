@@ -19,8 +19,6 @@ export class RegisterComponent {
 credentials: LoginRegisterModel = {username:'', password:''}
 loginDetails: LoginDetails = {invalidLogin:false, inSubmision:false}
 
- 
-
 constructor(private router: Router, private http: HttpClient, private auth: AuthService) { }
 
 register = ( form: NgForm) => {

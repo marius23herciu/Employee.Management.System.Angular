@@ -18,9 +18,10 @@
             <td>{{employee.lastName}}</td>
             <td>{{employee.email}}</td>
             <td>{{employee.phone}}</td>
-            <td>{{employee.salary}}</td>
+            <td>{{employee.salary}}€</td>
             <td>{{employee.department}}</td>
-            <td><button type="submit" class="btn btn-primary" [routerLink]="['edit', employee.id]">View</button></td>
+            <td><button type="submit" class="btn btn-primary" [routerLink]="['view', employee.id]">View</button></td>
+            <td><button type="submit" class="btn btn-primary" [routerLink]="['edit', employee.id]">Edit</button></td>
           </tr>
         </tbody>
       </table>
